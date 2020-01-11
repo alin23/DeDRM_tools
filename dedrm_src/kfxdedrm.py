@@ -3,11 +3,12 @@
 
 from __future__ import with_statement
 
-# Engine to remove drm from Kindle KFX ebooks
-
 import os
 import shutil
 import zipfile
+
+# Engine to remove drm from Kindle KFX ebooks
+
 
 try:
     from cStringIO import StringIO
@@ -86,10 +87,10 @@ class KFXZipBook:
 
         print u'KFX DRM voucher successfully decrypted'
 
-        license_type = voucher.getlicensetype()
-        if license_type != "Purchase":
-            raise Exception((u'This book is licensed as {0}. '
-                    'These tools are intended for use on purchased books.').format(license_type))
+        # license_type = voucher.getlicensetype()
+        # if license_type != "Purchase":
+        #     raise Exception((u'This book is licensed as {0}. '
+        #             'These tools are intended for use on purchased books.').format(license_type))
 
         self.voucher = voucher
 
